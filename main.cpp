@@ -61,9 +61,15 @@ public:
     }
 
     ~MyPriorityQueue() {
-        while (first != nullptr) {
-            last->next = nullptr;
-
+        que *el = first->next;
+        delete first;
+        while(el != nullptr) {
+            first = el;
+            el = el->next;
+            delete first;
+        }
+        first = nullptr;
+        last = nullptr;
         }
     }
 };
