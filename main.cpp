@@ -36,7 +36,9 @@ public:
             que *one_more = first;
             while (one_more->next != nullptr) {
                 if (one_more->elem < one_more->next->elem) {
-                    std::swap(one_more->elem, one_more->next->elem);
+                  type q = one_more->next->elem;
+                  one_more->next->elem = one_more->elem;
+                  one_more->elem = q;
                 }
                 one_more = one_more->next;
             }
