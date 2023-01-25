@@ -36,9 +36,7 @@ public:
             que *one_more = first;
             while (one_more->next != nullptr) {
                 if (one_more->elem < one_more->next->elem) {
-                    type a = one_more->elem;
-                    type b = one_more->next->elem;
-                    std::swap(a, b);
+                    std::swap(one_more->elem, one_more->next->elem);
                 }
                 one_more = one_more->next;
             }
@@ -70,7 +68,6 @@ public:
         }
         first = nullptr;
         last = nullptr;
-        }
     }
 };
 
@@ -100,7 +97,7 @@ int main() {
     MyPriorityQueue<float> b;
     b.push(356.7);
     b.push(36.2);
-    b.push(634.1);
+    b.push(6.1);
     b.push(657.22);
     std::cout << b;
     std::cout << "Peek element is " << b.peek() << "\n";
@@ -116,7 +113,7 @@ int main() {
     MyPriorityQueue<char> c;
     c.push('t');
     c.push('7');
-    c.push('n');
+    c.push('x');
     c.push('Q');
     c.push('#');
     std::cout << c;
